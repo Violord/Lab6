@@ -77,6 +77,9 @@ public class LonelyTwitterActivity extends Activity {
 					public void onItemClick(AdapterView<?> parent, View view,
 											int position ,long id){
 						Intent intent = new Intent(activity, EditTweetActivity.class);
+						Bundle bundle = new Bundle();
+						bundle.putString("title", tweetList.get(position).getMessage());
+						intent.putExtras(bundle);
 						startActivity(intent);
 					}
 
